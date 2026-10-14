@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#071321">
+<title>CyberSec Roadmap</title>
+<style>
+:root{--bg:#071321;--panel:#0d2033;--panel2:#102840;--line:#1c3a55;--text:#edf6ff;--muted:#9db4c9;--blue:#2994ff;--cyan:#31d6c0;--purple:#a78bfa;--orange:#ffb454;--red:#ff6b82}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at top right,#102e49 0,transparent 38%),var(--bg);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;min-height:100vh}
+button,input{font:inherit}button{cursor:pointer}.app{max-width:760px;margin:auto;padding:18px 15px 100px}.top{display:flex;align-items:center;justify-content:space-between;margin-bottom:22px}.brand{display:flex;gap:10px;align-items:center;font-weight:800;font-size:18px;letter-spacing:-.3px}.shield{display:grid;place-items:center;width:42px;height:42px;border-radius:14px;background:linear-gradient(135deg,#1684ff,#29d4c3);font-size:22px;box-shadow:0 8px 25px #1684ff30}.small{color:var(--muted);font-size:12px}.eyebrow{color:var(--cyan);font-size:11px;font-weight:800;text-transform:uppercase;letter-spacing:1.3px}.hero{margin-bottom:20px}.hero h1{font-size:28px;line-height:1.15;margin:7px 0}.hero p{color:var(--muted);margin:8px 0 0;line-height:1.5}.panel{background:linear-gradient(145deg,#0e2338,#0a1b2c);border:1px solid var(--line);border-radius:20px;padding:17px;margin:13px 0;box-shadow:0 12px 28px #00000012}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#0a1b2b;border:1px solid var(--line);border-radius:15px;padding:13px 10px}.stat strong{display:block;font-size:22px;letter-spacing:-.5px}.stat span{font-size:11px;color:var(--muted)}.progress-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}.progress-head h2,.section-title{font-size:16px;margin:0}.progress-number{font-size:23px;font-weight:800;color:var(--cyan)}.bar{height:8px;background:#19324a;border-radius:99px;overflow:hidden}.bar>div{height:100%;width:0;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:99px;transition:width .25s}.section-row{display:flex;align-items:center;justify-content:space-between;margin:24px 2px 10px}.phase{width:100%;text-align:left;display:flex;gap:12px;align-items:center;background:linear-gradient(145deg,#0e2338,#0a1b2c);border:1px solid var(--line);border-radius:17px;padding:14px;margin:9px 0;color:var(--text)}.phase:active{transform:scale(.99)}.phase-icon{width:42px;height:42px;flex:0 0 42px;display:grid;place-items:center;border-radius:13px;font-size:21px;background:#153858}.phase-main{flex:1;min-width:0}.phase-name{font-weight:750;font-size:14px;margin-bottom:5px}.phase-meta{font-size:11px;color:var(--muted);margin-bottom:8px}.phase-right{font-size:12px;color:var(--cyan);white-space:nowrap}.phase .bar{height:5px}.screen{display:none}.screen.active{display:block}.back{border:0;background:transparent;color:var(--muted);padding:5px 0 15px;font-weight:650}.detail-title{display:flex;gap:13px;align-items:center;margin:6px 0 15px}.detail-title h1{font-size:22px;margin:0 0 5px}.detail-title p{margin:0;color:var(--muted);font-size:13px}.task{display:flex;gap:12px;align-items:flex-start;padding:14px 0;border-bottom:1px solid #1b354d}.task:last-child{border-bottom:0}.task input{appearance:none;flex:0 0 22px;width:22px;height:22px;margin:0;border:1.5px solid #54728d;border-radius:7px;background:#091a2a;position:relative;cursor:pointer}.task input:checked{background:var(--cyan);border-color:var(--cyan)}.task input:checked:after{content:"✓";position:absolute;color:#06201f;font-weight:900;left:4px;top:0;font-size:15px}.task label{flex:1;cursor:pointer;font-size:14px;line-height:1.4}.task.done label{text-decoration:line-through;color:#7995ab}.task small{display:block;color:var(--muted);font-size:11px;margin-top:4px;line-height:1.4}.primary,.secondary{border:0;border-radius:13px;padding:13px 16px;font-weight:750}.primary{background:linear-gradient(100deg,#1684ff,#247bff);color:white;width:100%;box-shadow:0 7px 20px #1684ff25}.secondary{background:#112b42;color:var(--text);border:1px solid var(--line)}.actions{display:flex;gap:9px;margin-top:15px}.actions button{flex:1}.nav{position:fixed;bottom:0;left:0;right:0;background:#071321ed;backdrop-filter:blur(15px);border-top:1px solid #19344b;display:flex;justify-content:center;padding:9px 8px max(9px,env(safe-area-inset-bottom));z-index:5}.nav button{flex:1;max-width:180px;background:transparent;border:0;color:var(--muted);padding:7px 4px;font-size:11px}.nav button span{display:block;font-size:20px;margin-bottom:3px}.nav button.selected{color:var(--cyan);font-weight:800}.resource{padding:14px 0;border-bottom:1px solid #1b354d}.resource:last-child{border:0}.resource strong{font-size:14px}.resource p{font-size:12px;color:var(--muted);line-height:1.5;margin:5px 0}.resource a{color:#67b7ff;font-size:12px;text-decoration:none;font-weight:750}.empty{color:var(--muted);font-size:13px;line-height:1.5}.toast{position:fixed;bottom:88px;left:50%;transform:translateX(-50%);background:#123d4b;border:1px solid #287b7c;padding:10px 15px;border-radius:12px;font-size:12px;display:none;z-index:9}.footer-note{font-size:11px;color:#7691a8;text-align:center;margin-top:25px;line-height:1.5}
+.task{flex-wrap:wrap}.task label{min-width:0}.tact{display:flex;gap:4px}.tact button{background:transparent;border:1px solid var(--line);color:var(--muted);border-radius:9px;width:32px;height:32px;font-size:14px}.tact button.on{color:var(--orange);border-color:var(--orange)}.note{flex:0 0 100%;width:100%;min-height:84px;background:#091a2a;color:var(--text);border:1px solid var(--line);border-radius:12px;padding:10px;font:inherit;font-size:16px;resize:vertical}.clock{font-size:46px;font-weight:800;text-align:center;margin:10px 0;font-variant-numeric:tabular-nums;color:var(--cyan)}.rv{display:flex;justify-content:space-between;gap:10px;padding:11px 0;border-bottom:1px solid #1b354d;font-size:13px;cursor:pointer}.rv small{color:var(--muted)}button:focus-visible,input:focus-visible,textarea:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+@media(min-width:600px){.app{padding-top:28px}.hero h1{font-size:34px}.roadmap-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}.phase{margin:7px 0}.stats{gap:12px}.panel{padding:21px}}
+</style>
+</head>
+<body>
+<div class="app">
+  <header class="top">
+    <div class="brand"><div class="shield">⬡</div><div>CyberSec <span style="color:var(--blue)">Roadmap</span><div class="small" style="font-weight:500;margin-top:2px">Seu plano de estudos</div></div></div>
+    <button class="secondary" style="padding:9px 11px" onclick="resetAsk()" aria-label="Opções">⚙</button>
+  </header>
+
+  <main id="homeScreen" class="screen active">
+    <section class="hero"><div class="eyebrow">Aprenda. Pratique. Evolua.</div><h1>Seu próximo nível<br>começa aqui.</h1><p>Marque cada etapa conforme aprende e acompanhe seu progresso em cibersegurança.</p></section>
+    <section class="panel">
+      <div class="progress-head"><div><h2>Progresso geral</h2><div class="small" style="margin-top:5px" id="progressCaption">0 etapas concluídas</div></div><div class="progress-number" id="percent">0%</div></div>
+      <div class="bar"><div id="overallBar"></div></div>
+    </section>
+    <section class="stats">
+      <div class="stat"><strong id="doneCount">0</strong><span>Concluídas</span></div>
+      <div class="stat"><strong id="leftCount">0</strong><span>Restantes</span></div>
+      <div class="stat"><strong id="phaseCount">0/6</strong><span>Fases completas</span></div>
+    </section>
+    <section class="panel"><div class="eyebrow">Próxima etapa</div><div id="nextHome" style="margin-top:8px"></div></section>
+    <section class="panel"><div class="progress-head"><div><div class="eyebrow">Sessão de estudo</div><div class="small" id="studyInfo" style="margin-top:5px"></div></div><span class="small" id="tmode">Foco</span></div><div class="clock" id="clock">25:00</div><div class="actions"><button class="secondary" onclick="tReset()">Zerar</button><button class="primary" id="tgo" onclick="tToggle()">Iniciar 25 min</button></div></section>
+    <div class="section-row"><h2 class="section-title">Seu roadmap</h2><span class="small">6 fases</span></div>
+    <div id="phaseList" class="roadmap-grid"></div>
+    <section class="panel"><div class="eyebrow">Dica de estudo</div><p style="line-height:1.5;margin:7px 0 0;font-size:13px">Tente estudar um pouco de teoria e depois praticar. Você pode avançar no seu ritmo — não precisa concluir uma fase em uma data específica.</p></section>
+  </main>
+
+  <main id="detailScreen" class="screen">
+    <button class="back" onclick="showScreen('home')">← Voltar ao roadmap</button>
+    <div id="detailContent"></div>
+  </main>
+
+  <main id="resourcesScreen" class="screen">
+    <section class="hero"><div class="eyebrow">Biblioteca de aprendizado</div><h1>Recursos gratuitos</h1><p>Links úteis para acompanhar as fases do seu plano.</p></section>
+    <section class="panel" id="resourceList"></section>
+    <section class="panel"><h2 class="section-title">Como praticar com segurança</h2><p class="empty">Use laboratórios próprios, plataformas de treinamento e sistemas para os quais você tenha autorização explícita. Não teste redes, contas ou sites de terceiros sem permissão.</p></section>
+  </main>
+
+  <main id="statsScreen" class="screen">
+    <section class="hero"><div class="eyebrow">Seu desenvolvimento</div><h1>Estatísticas</h1><p>Veja quanto do plano você já concluiu.</p></section>
+    <section class="stats">
+      <div class="stat"><strong id="statPercent">0%</strong><span>Progresso</span></div>
+      <div class="stat"><strong id="statDone">0</strong><span>Etapas feitas</span></div>
+      <div class="stat"><strong id="statPhases">0</strong><span>Fases completas</span></div>
+    </section>
+    <section class="panel"><h2 class="section-title">Progresso por fase</h2><div id="phaseStats"></div></section>
+    <section class="panel"><h2 class="section-title">Para revisar ⚑</h2><div id="reviewList" style="margin-top:8px"></div></section>
+    <section class="panel"><h2 class="section-title">Backup do progresso</h2><p class="empty">Seus dados ficam só neste navegador. Copie o backup para guardar ou restaurar em outro aparelho.</p><textarea id="bk" class="note" placeholder="Cole aqui um backup para restaurar"></textarea><div class="actions"><button class="secondary" onclick="bkLoad()">Restaurar</button><button class="secondary" onclick="bkMake()">Copiar backup</button></div></section>
+    <section class="panel"><h2 class="section-title">Próximo passo</h2><p class="empty" id="nextTip">Marque uma etapa para começar a acompanhar sua evolução.</p><button class="primary" onclick="showScreen('home')">Continuar estudando</button></section>
+  </main>
+</div>
+<nav class="nav">
+  <button class="selected" data-screen="home" onclick="showScreen('home')"><span>⌂</span>Início</button>
+  <button data-screen="detail" onclick="showScreen('home')"><span>☷</span>Roadmap</button>
+  <button data-screen="resources" onclick="showScreen('resources')"><span>▣</span>Recursos</button>
+  <button data-screen="stats" onclick="showScreen('stats')"><span>◔</span>Progresso</button>
+</nav>
+<div id="toast" class="toast"></div>
+<script>
+const phases = [
+ {name:"Fundamentos de informática",weeks:"Semanas 1–3",icon:"💻",color:"#31d6c0",desc:"Entenda os componentes e o funcionamento de computadores e sistemas operacionais.",tasks:[
+  ["Hardware e componentes","CPU, RAM, armazenamento e periféricos."],["Sistemas operacionais","O que são processos, serviços e kernel."],["Memória, processador e armazenamento","Diferenças e funções de cada componente."],["Arquivos, pastas e permissões","Organização, extensões e acesso a arquivos."],["Terminal do Windows","Praticar cd, dir, whoami e ipconfig."],["Processos e gerenciamento","Usar o Gerenciador de Tarefas."],["Usuários e serviços","Entender contas, privilégios e serviços."],["Windows: logs básicos","Localizar registros no Visualizador de Eventos."],["Prática de linha de comando","Executar comandos e registrar o que fazem."]]},
+ {name:"Redes de computadores",weeks:"Semanas 4–7",icon:"🌐",color:"#2994ff",desc:"Aprenda como dispositivos se comunicam e como os dados trafegam.",tasks:[
+  ["IP, IPv4 e IPv6","Identificar endereço IP local e público."],["Máscara e gateway","Entender redes locais e saída para a internet."],["Modelo OSI e TCP/IP","Explicar as camadas e suas funções."],["TCP, UDP e portas","Entender conexões e serviços de rede."],["DNS e DHCP","Observar resolução de nomes e configuração automática."],["HTTP, HTTPS e TLS","Entender requisições web e conexões seguras."],["NAT, roteadores e firewall","Conhecer o papel de cada componente."],["Comandos de rede","Praticar ping, tracert, nslookup e netstat."],["Wireshark: primeiros passos","Abrir uma captura de laboratório."],["Analisar uma captura","Identificar DNS e conexões TCP autorizadas."]]},
+ {name:"Linux e programação",weeks:"Semanas 8–12",icon:"⌨️",color:"#a78bfa",desc:"Use Linux, automatize tarefas e documente seus projetos.",tasks:[
+  ["Instalar Ubuntu/WSL ou VM","Preparar um ambiente Linux de estudos."],["Navegação no terminal","Praticar pwd, ls, cd, cat e find."],["Pesquisa de texto","Usar grep e pipes em arquivos de exemplo."],["Usuários e permissões","Praticar chmod e entender sudo."],["Processos no Linux","Usar ps, top e kill em processos próprios."],["Python: variáveis e tipos","Criar pequenos scripts."],["Python: condicionais e loops","Resolver exercícios introdutórios."],["Python: funções e arquivos","Ler e processar arquivos de texto."],["Tratamento de erros","Usar try/except e validar entradas."],["Bash básico","Automatizar uma tarefa simples."],["Git e GitHub","Criar um repositório e um README."],["Projeto: analisador de logs","Contar tentativas de login em dados fictícios."]]},
+ {name:"Fundamentos de segurança",weeks:"Meses 4–5",icon:"🛡️",color:"#ffb454",desc:"Aprenda os princípios, controles e riscos que orientam a segurança.",tasks:[
+  ["Tríade CIA","Confidencialidade, integridade e disponibilidade."],["Autenticação e autorização","Entender a diferença e exemplos."],["MFA e senhas seguras","Configurar MFA em suas próprias contas."],["Princípio do menor privilégio","Revisar permissões em ambiente próprio."],["Hashes e sal","Entender integridade e armazenamento de senhas."],["Criptografia simétrica e assimétrica","Conhecer conceitos e usos."],["Certificados e TLS","Entender certificados e HTTPS."],["Vulnerabilidades e riscos","Diferenciar ameaça, falha, impacto e risco."],["OWASP Top 10","Estudar riscos comuns em aplicações web."],["Hardening e atualizações","Criar checklist de proteção de um computador."],["Backups e recuperação","Planejar e testar um backup próprio."],["Logs e resposta inicial","Identificar eventos que merecem investigação."]]},
+ {name:"Laboratórios práticos",weeks:"Meses 6–7",icon:"🧪",color:"#ff6b82",desc:"Consolide seus conhecimentos com desafios em ambientes seguros.",tasks:[
+  ["OverTheWire: Bandit","Concluir os primeiros níveis."],["TryHackMe: fundamentos","Concluir módulos introdutórios disponíveis."],["Wireshark: análise de tráfego","Documentar uma captura de laboratório."],["Nmap em laboratório próprio","Descobrir serviços em uma máquina autorizada."],["Laboratório de segurança web","Resolver um exercício introdutório no PortSwigger."],["Controle de acesso","Entender e testar falhas em laboratório."],["SQL injection em laboratório","Estudar causas e correções em ambiente intencionalmente vulnerável."],["XSS em laboratório","Entender impacto e formas de prevenção."],["Relatório de vulnerabilidade","Escrever evidência, impacto e correção."],["Revisão e anotações","Registrar aprendizados e dúvidas."]]},
+ {name:"Especialização e portfólio",weeks:"Meses 8–12",icon:"🎯",color:"#7c83ff",desc:"Escolha uma trilha, crie projetos e prepare-se para oportunidades profissionais.",tasks:[
+  ["Explorar Pentest/Red Team","Experimentar um laboratório introdutório."],["Explorar Blue Team/SOC","Analisar logs e alertas de treinamento."],["Explorar AppSec","Revisar um exemplo de código vulnerável."],["Escolher uma especialização","Definir foco para os próximos 3 meses."],["Projeto 1: análise de logs","Publicar documentação com dados fictícios."],["Projeto 2: relatório de laboratório","Documentar metodologia e correções."],["Projeto 3: automação defensiva","Criar um script seguro e documentado."],["Organizar GitHub/portfólio","Revisar READMEs e remover segredos dos repositórios."]]}
+];
+const resources=[
+ ["Cisco Networking Academy","Cursos introdutórios de redes e fundamentos de tecnologia.","https://www.netacad.com/"],
+ ["OverTheWire: Bandit","Desafios progressivos para praticar Linux e terminal.","https://overthewire.org/wargames/bandit/"],
+ ["TryHackMe","Percursos guiados de cibersegurança para iniciantes.","https://tryhackme.com/"],
+ ["OWASP Top 10","Referência sobre riscos importantes de segurança web.","https://owasp.org/www-project-top-ten/"],
+ ["PortSwigger Web Security Academy","Aulas e laboratórios gratuitos de segurança web.","https://portswigger.net/web-security"],
+ ["Wireshark","Ferramenta para analisar tráfego de rede em capturas autorizadas.","https://www.wireshark.org/"],
+ ["Python","Documentação oficial para aprender a linguagem.","https://docs.python.org/pt-br/3/"]
+];
+let completed = {};
+try{completed=JSON.parse(localStorage.getItem("cybersec-roadmap-progress")||"{}")}catch(e){completed={}}
+let activePhase=0;
+function totalTasks(){return phases.reduce((n,p)=>n+p.tasks.length,0)}
+function phaseDone(i){return phases[i].tasks.filter((_,j)=>completed[i+"-"+j]).length}
+function totalDone(){return Object.values(completed).filter(Boolean).length}
+function save(){localStorage.setItem("cybersec-roadmap-progress",JSON.stringify(completed));renderAll();toast("Progresso salvo neste dispositivo")}
+function renderAll(){renderPhases();renderStats()}
+function renderPhases(){
+ const host=document.getElementById("phaseList");host.innerHTML="";
+ phases.forEach((p,i)=>{const n=phaseDone(i),pct=Math.round(n/p.tasks.length*100);const b=document.createElement("button");b.className="phase";b.innerHTML=`<div class="phase-icon" style="background:${p.color}20;color:${p.color}">${p.icon}</div><div class="phase-main"><div class="phase-name">${i+1}. ${p.name}</div><div class="phase-meta">${p.weeks} · ${n}/${p.tasks.length} etapas</div><div class="bar"><div style="width:${pct}%;background:${p.color}"></div></div></div><div class="phase-right">›</div>`;b.onclick=()=>openPhase(i);host.appendChild(b)});
+ const n=totalDone(),total=totalTasks(),pct=Math.round(n/total*100),complete=phases.filter((_,i)=>phaseDone(i)===phases[i].tasks.length).length;
+ document.getElementById("percent").textContent=pct+"%";document.getElementById("progressCaption").textContent=`${n} de ${total} etapas concluídas`;document.getElementById("overallBar").style.width=pct+"%";document.getElementById("doneCount").textContent=n;document.getElementById("leftCount").textContent=total-n;document.getElementById("phaseCount").textContent=complete+"/6";
+}
+function openPhase(i){activePhase=i;const p=phases[i],n=phaseDone(i),pct=Math.round(n/p.tasks.length*100);let tasks=p.tasks.map((t,j)=>{const key=i+"-"+j,done=!!completed[key];return `<div class="task ${done?"done":""}"><input id="task-${key}" type="checkbox" ${done?"checked":""} onchange="toggleTask('${key}',this.checked)"><label for="task-${key}">${t[0]}<small>${t[1]}</small></label></div>`}).join("");
+ document.getElementById("detailContent").innerHTML=`<div class="detail-title"><div class="phase-icon" style="background:${p.color}20;color:${p.color};width:54px;height:54px;font-size:25px">${p.icon}</div><div><h1>${p.name}</h1><p>${p.weeks} · ${n}/${p.tasks.length} etapas</p></div></div><section class="panel"><p style="margin:0 0 12px;color:var(--muted);font-size:13px;line-height:1.5">${p.desc}</p><div class="progress-head"><span class="small">Progresso da fase</span><strong style="color:${p.color}">${pct}%</strong></div><div class="bar"><div style="width:${pct}%;background:${p.color}"></div></div></section><section class="panel"><div class="progress-head"><h2>Etapas para marcar</h2><span class="small">${p.tasks.length} no total</span></div>${tasks}<div class="actions"><button class="secondary" onclick="markPhase(${i},false)">Desmarcar fase</button><button class="secondary" onclick="markPhase(${i},true)">Concluir fase</button></div></section><button class="primary" onclick="openPhase(${(i+1)%phases.length})">${i===phases.length-1?"Voltar à primeira fase":"Próxima fase →"}</button>`;
+ showScreen("detail")
+}
+function toggleTask(key,value){completed[key]=value;localStorage.setItem("cybersec-roadmap-progress",JSON.stringify(completed));renderAll();openPhase(activePhase)}
+function markPhase(i,value){phases[i].tasks.forEach((_,j)=>completed[i+"-"+j]=value);save();openPhase(i)}
+function renderStats(){const n=totalDone(),total=totalTasks(),pct=Math.round(n/total*100),complete=phases.filter((_,i)=>phaseDone(i)===phases[i].tasks.length).length;document.getElementById("statPercent").textContent=pct+"%";document.getElementById("statDone").textContent=n;document.getElementById("statPhases").textContent=complete;document.getElementById("phaseStats").innerHTML=phases.map((p,i)=>{const d=phaseDone(i),v=Math.round(d/p.tasks.length*100);return `<div style="margin:15px 0"><div class="progress-head"><span style="font-size:12px">${p.icon} ${p.name}</span><span class="small">${d}/${p.tasks.length}</span></div><div class="bar"><div style="width:${v}%;background:${p.color}"></div></div></div>`}).join("");let next="Você concluiu todas as etapas! Revise seus projetos e continue praticando.";outer:for(let i=0;i<phases.length;i++)for(let j=0;j<phases[i].tasks.length;j++)if(!completed[i+"-"+j]){next=`Próxima etapa sugerida: ${phases[i].tasks[j][0]} — fase ${i+1}, ${phases[i].name}.`;break outer}document.getElementById("nextTip").textContent=next}
+function renderResources(){document.getElementById("resourceList").innerHTML=resources.map(r=>`<div class="resource"><strong>${r[0]}</strong><p>${r[1]}</p><a href="${r[2]}" target="_blank" rel="noopener noreferrer">Abrir recurso ↗</a></div>`).join("")}
+function showScreen(name){document.querySelectorAll(".screen").forEach(s=>s.classList.remove("active"));const id=name==="detail"?"detailScreen":name==="resources"?"resourcesScreen":name==="stats"?"statsScreen":"homeScreen";document.getElementById(id).classList.add("active");document.querySelectorAll(".nav button").forEach(b=>b.classList.toggle("selected",b.dataset.screen===name||(name==="detail"&&b.dataset.screen==="home")));window.scrollTo({top:0,behavior:"smooth"})}
+function toast(msg){const t=document.getElementById("toast");t.textContent=msg;t.style.display="block";clearTimeout(window.toastTimer);window.toastTimer=setTimeout(()=>t.style.display="none",1800)}
+function resetAsk(){if(confirm("Quer apagar todo o progresso salvo neste dispositivo? Esta ação não pode ser desfeita.")){completed={};localStorage.removeItem("cybersec-roadmap-progress");renderAll();toast("Progresso reiniciado")}}
+renderResources();renderAll();
+</script>
+<script>
+const $=id=>document.getElementById(id),day=d=>d.toLocaleDateString("sv-SE"),today=()=>day(new Date());
+const LS=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))||d}catch(e){return d}},put=(k,v)=>{try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}};
+const esc=s=>s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+let notes=LS("cybersec-notes",{}),flags=LS("cybersec-flags",{}),log=LS("cybersec-log",{}),openN={},armed=0;
+const saveAll=()=>{put("cybersec-roadmap-progress",completed);put("cybersec-notes",notes);put("cybersec-flags",flags);put("cybersec-log",log)};
+function touch(){log[today()]=log[today()]||0;put("cybersec-log",log)}
+function streak(){let n=0,d=new Date();if(!(day(d) in log))d.setDate(d.getDate()-1);while(day(d) in log){n++;d.setDate(d.getDate()-1)}return n}
+const _op=openPhase,_ra=renderAll;
+openPhase=function(i,keep){const y=scrollY;_op(i);document.querySelectorAll("#detailContent .task").forEach((el,j)=>{const k=i+"-"+j;el.insertAdjacentHTML("beforeend",`<div class="tact"><button class="${flags[k]?"on":""}" onclick="flag('${k}')" aria-label="Marcar para revisar" title="Para revisar">⚑</button><button class="${notes[k]?"on":""}" onclick="noteTog('${k}')" aria-label="Anotações" title="Anotações">✎</button></div>${openN[k]?`<textarea class="note" placeholder="O que você aprendeu? Dúvidas, comandos, links…" oninput="saveNote('${k}',this.value)">${esc(notes[k]||"")}</textarea>`:""}`)});if(keep)scrollTo(0,y)};
+toggleTask=function(k,v){completed[k]=v;if(v)touch();saveAll();renderAll();openPhase(activePhase,true)};
+markPhase=function(i,v){phases[i].tasks.forEach((_,j)=>completed[i+"-"+j]=v);if(v)touch();saveAll();renderAll();openPhase(i,true);toast("Progresso salvo neste dispositivo")};
+function flag(k){if(flags[k])delete flags[k];else flags[k]=1;saveAll();renderAll();openPhase(activePhase,true)}
+function noteTog(k){openN[k]=!openN[k];openPhase(activePhase,true)}
+function saveNote(k,v){if(v.trim())notes[k]=v;else delete notes[k];put("cybersec-notes",notes)}
+renderAll=function(){_ra();renderExtra()};
+function renderExtra(){let nx=null;outer:for(let i=0;i<phases.length;i++)for(let j=0;j<phases[i].tasks.length;j++)if(!completed[i+"-"+j]){nx=[i,j];break outer}
+ $("nextHome").innerHTML=nx?`<strong>${phases[nx[0]].tasks[nx[1]][0]}</strong><div class="small" style="margin:4px 0 12px">Fase ${nx[0]+1} · ${phases[nx[0]].name}</div><button class="primary" onclick="openPhase(${nx[0]})">Continuar de onde parou →</button>`:"🎉 Você concluiu todas as etapas! Revise e siga praticando.";
+ const s=streak();$("studyInfo").textContent=`Hoje: ${log[today()]||0} min · Sequência: ${s} dia${s==1?"":"s"}`;
+ $("reviewList").innerHTML=Object.keys(flags).map(k=>{const[i,j]=k.split("-");return `<div class="rv" onclick="openPhase(${i})"><span>${phases[i].tasks[j][0]}</span><small>Fase ${+i+1}</small></div>`}).join("")||'<p class="empty">Use o ⚑ nas etapas que quer revisar depois.</p>'}
+let T={mode:"f",left:1500,run:null,end:0};
+const tf=()=>String(Math.floor(T.left/60)).padStart(2,"0")+":"+String(T.left%60).padStart(2,"0");
+function tDraw(){$("clock").textContent=tf();$("tmode").textContent=T.mode=="f"?"Foco":"Pausa";$("tgo").textContent=T.run?"Pausar":"Iniciar "+(T.mode=="f"?25:5)+" min";document.title=T.run?tf()+" · CyberSec":"CyberSec Roadmap"}
+function tToggle(){if(T.run){clearInterval(T.run);T.run=null}else{T.end=Date.now()+T.left*1000;T.run=setInterval(tick,500)}tDraw()}
+function tick(){T.left=Math.max(0,Math.round((T.end-Date.now())/1000));if(!T.left){clearInterval(T.run);T.run=null;if(T.mode=="f"){log[today()]=(log[today()]||0)+25;put("cybersec-log",log);toast("Foco concluído! +25 min. Hora da pausa.")}else toast("Pausa acabou. Bora estudar!");try{navigator.vibrate&&navigator.vibrate(300)}catch(e){}T.mode=T.mode=="f"?"p":"f";T.left=T.mode=="f"?1500:300;renderExtra()}tDraw()}
+function tReset(){clearInterval(T.run);T.run=null;T.mode="f";T.left=1500;tDraw()}
+function bkMake(){const t=$("bk");t.value=JSON.stringify({v:1,completed,notes,flags,log});t.select();try{document.execCommand("copy");toast("Backup copiado")}catch(e){toast("Selecione e copie o texto")}}
+function bkLoad(){try{const d=JSON.parse($("bk").value);completed=d.completed||{};notes=d.notes||{};flags=d.flags||{};log=d.log||{};saveAll();renderAll();toast("Backup restaurado")}catch(e){toast("Backup inválido")}}
+resetAsk=function(){if(Date.now()<armed){completed={};notes={};flags={};log={};["cybersec-roadmap-progress","cybersec-notes","cybersec-flags","cybersec-log"].forEach(k=>{try{localStorage.removeItem(k)}catch(e){}});armed=0;renderAll();toast("Tudo reiniciado")}else{armed=Date.now()+3000;toast("Toque no ⚙ de novo para apagar TUDO")}};
+renderAll();tDraw();
+</script>
+</body>
+</html>
